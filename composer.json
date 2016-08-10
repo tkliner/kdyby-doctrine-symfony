@@ -19,6 +19,16 @@
   ],
   "suggest": {
   },
+  "require": {
+    "php": ">=5.4",
+    "nette/utils": "~2.3@dev",
+
+    "doctrine/orm": "~2.5",
+    "doctrine/dbal": "~2.5"
+  },
+  "require-dev": {
+    "nette/utils": "~2.3@dev"
+  },
   "autoload": {
     "psr-0": {
       "Kdyby\\Doctrine\\": "src/",
