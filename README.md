@@ -163,7 +163,7 @@ public function indexAction($page, Request $request)
 ```
 
 
-QueryObject you can generate and transmit in repository, but they should extends from Kdyby\Doctrine\EntityRepository.
+You can create QueryObject in repository and transmit in from repository. In this case the repository must extend from Kdyby\Doctrine\EntityRepository.
 
 
 ```

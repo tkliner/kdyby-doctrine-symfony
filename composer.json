@@ -8,10 +8,10 @@
     "issues": "https://github.com/tkliner/kdyby-doctrine-symfony/issues",
     "docs": "https://github.com/tkliner/kdyby-doctrine-symfony"
   },
-  "license": "BSD-2-Clause",
+  "license": ["BSD-3-Clause", "GPL-2.0", "GPL-3.0"],
   "authors": [
     {
-      "name": "StageMedia",
+      "name": "Tomáš Kliner",
       "email": "kliner.tomas@gmail.com",
       "homepage": "http://www.stagemedia.cz",
       "role": "Developer"
