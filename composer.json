@@ -1,5 +1,5 @@
 {
-  "name": "kdyby/doctrine-query",
+  "name": "kdyby/kdyby-doctrine-symfony",
   "type": "library",
   "description": "Kdyby Doctrine QueryObject for Symfony",
   "keywords": ["kdyby", "symfony", "queryObject"],
