@@ -232,7 +232,7 @@ class EntityManager extends Doctrine\ORM\EntityManager implements Persistence\Qu
     {
         $lastQuery = $queryObject instanceof QueryObject ? $queryObject->getLastQuery() : NULL;
 
-        return new Exception\QueryException($e, $lastQuery, '[' . get_class($queryObject) . '] ' . $e->getMessage());
+        return new QueryException($e, $lastQuery, '[' . get_class($queryObject) . '] ' . $e->getMessage());
     }
 
     /**
