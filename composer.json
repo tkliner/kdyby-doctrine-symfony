@@ -1,0 +1,36 @@
+{
+  "name": "kdyby/doctrine-query",
+  "type": "library",
+  "description": "Kdyby Doctrine QueryObject for Symfony",
+  "keywords": ["kdyby", "symfony", "queryObject"],
+  "homepage": "https://github.com/tkliner/kdyby-doctrine-symfony",
+  "support": {
+    "issues": "https://github.com/tkliner/kdyby-doctrine-symfony/issues",
+    "docs": "https://github.com/tkliner/kdyby-doctrine-symfony"
+  },
+  "license": "BSD-2-Clause",
+  "authors": [
+    {
+      "name": "StageMedia",
+      "email": "kliner.tomas@gmail.com",
+      "homepage": "http://www.stagemedia.cz",
+      "role": "Developer"
+    }
+  ],
+  "suggest": {
+  },
+  "autoload": {
+    "psr-0": {
+      "Kdyby\\Doctrine\\": "src/",
+      "Kdyby\\Persistence\\": "src/"
+    },
+    "classmap": [
+      "src/Kdyby/Doctrine/exceptions.php"
+    ]
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0-dev"
+    }
+  }
+}
