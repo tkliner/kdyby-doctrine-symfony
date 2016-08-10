@@ -206,6 +206,7 @@ $users = $repo->fetch($userQuery)
               ->applyPaginator($paginator, 2);
 ```
 
-**Conclusions**
+Introduction
+------------
 
 This is experimental version without test and users' experience. Use at your own risk :)
