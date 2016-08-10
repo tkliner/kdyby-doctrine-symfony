@@ -147,9 +147,9 @@ public function indexAction($page, Request $request)
   
   $repo = $this->getDoctrine()->getManager();
   
-  **$userQuery = new UserQuery();**
-  **$userQuery->inCategory(1);**
-  **$userQuery->withStatus(1)**
+  $userQuery = new UserQuery();
+  $userQuery->inCategory(1);
+  $userQuery->withStatus(1)
   
   $users = $repo->fetch($userQuery)->applySorting(array('User.id' => 'DESC'))->applyPaginator($paginator, 1);
   
@@ -162,7 +162,9 @@ public function indexAction($page, Request $request)
 }  
 ```
 
+
 QueryObject you can generate and transmit in repository, but they should extends from Kdyby\Doctrine\EntityRepository.
+
 
 ```
 namespace AppBundle\Entity;
@@ -178,7 +180,9 @@ class UserRepository extends EntityRepository
 }
 ```
 
+
 Now you can change UserQuery Object follows:
+
 
 ```
 private function createBasicDql(Queryable $repository)
@@ -193,7 +197,9 @@ private function createBasicDql(Queryable $repository)
     }
 ```
 
+
 And in controller you can change logic:
+
 
 ```
 $repo = $this->getDoctrine()->getEntityManager()->getRepository('AppBundle:User');
