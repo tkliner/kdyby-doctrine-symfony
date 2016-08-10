@@ -16,7 +16,7 @@ use Doctrine\DBAL\SQLParserUtilsException;
 use Doctrine\ORM\AbstractQuery;
 use Doctrine\ORM\NativeQuery;
 use Doctrine\ORM\Query;
-use Kdyby\Exception;
+use Kdyby\Doctrine\Exception;
 use Kdyby;
 use Symfony\Component\Config\Definition\Exception\Exception;
 
@@ -507,7 +507,7 @@ final class NativeQueryWrapper extends AbstractQuery
 
     protected function _doExecute()
     {
-        throw new Exception\NotImplementedException;
+        throw new NotImplementedException;
     }
 
 

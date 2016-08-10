@@ -15,7 +15,7 @@ use Doctrine\DBAL\DriverManager;
 use Doctrine\ORM\AbstractQuery;
 use Doctrine\ORM\ORMException;
 use Doctrine\ORM\Query;
-use Kdyby\Exception;
+use Kdyby\Doctrine\Exception;
 use Kdyby\Doctrine\QueryObject;
 use Kdyby\Persistence;
 use Nette\Utils\ObjectMixin;
@@ -50,7 +50,7 @@ class EntityManager extends Doctrine\ORM\EntityManager implements Persistence\Qu
     public function createQueryBuilder($alias = NULL, $indexBy = NULL)
     {
         if ($alias !== NULL || $indexBy !== NULL) {
-            throw new Exception\NotSupportedException('Use EntityRepository for $alias and $indexBy arguments to work.');
+            throw new NotSupportedException('Use EntityRepository for $alias and $indexBy arguments to work.');
         }
 
         if (($config = $this->getConfiguration()) instanceof Configuration) {
@@ -169,7 +169,7 @@ class EntityManager extends Doctrine\ORM\EntityManager implements Persistence\Qu
                 break;
 
             default:
-                throw new Exception\InvalidArgumentException("Invalid connection");
+                throw new InvalidArgumentException("Invalid connection");
         }
 
         return new EntityManager($conn, $config, $conn->getEventManager());
@@ -214,7 +214,7 @@ class EntityManager extends Doctrine\ORM\EntityManager implements Persistence\Qu
             return NULL;
 
         } catch (Doctrine\ORM\NonUniqueResultException $e) { // this should never happen!
-            throw new Exception\InvalidStateException("You have to setup your query calling ->setMaxResult(1).", 0, $e);
+            throw new InvalidStateException("You have to setup your query calling ->setMaxResult(1).", 0, $e);
 
         } catch (\Exception $e) {
             throw $this->handleQueryException($e, $queryObject);

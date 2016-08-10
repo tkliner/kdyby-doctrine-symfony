@@ -17,7 +17,7 @@ use Kdyby;
 use Kdyby\Persistence\Queryable;
 use Nette\Utils\Strings;
 use Nette\Utils\Paginator as UIPaginator;
-use Kdyby\Exception;
+use Kdyby\Doctrine\Exception;
 
 
 
@@ -293,7 +293,7 @@ class ResultSet implements \Countable, \IteratorAggregate
                 }
 
             } catch (ORMException $e) {
-                throw new Exception\QueryException($e, $this->query, $e->getMessage());
+                throw new QueryException($e, $this->query, $e->getMessage());
             }
         }
 
@@ -332,7 +332,7 @@ class ResultSet implements \Countable, \IteratorAggregate
             return $this->iterator;
 
         } catch (ORMException $e) {
-            throw new Exception\QueryException($e, $this->query, $e->getMessage());
+            throw new QueryException($e, $this->query, $e->getMessage());
         }
     }
 
@@ -376,7 +376,7 @@ class ResultSet implements \Countable, \IteratorAggregate
     private function updating()
     {
         if ($this->frozen !== FALSE) {
-            throw new Exception\InvalidStateException("Cannot modify result set, that was already fetched from storage.");
+            throw new InvalidStateException("Cannot modify result set, that was already fetched from storage.");
         }
     }
 

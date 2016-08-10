@@ -15,7 +15,7 @@ use Doctrine\ORM\AbstractQuery;
 use Doctrine\ORM\Tools\Pagination\Paginator;
 use Kdyby;
 use Kdyby\Persistence\Queryable;
-use Kdyby\Exception;
+use Kdyby\Doctrine\Exception;
 
 
 
@@ -135,7 +135,7 @@ abstract class QueryObject implements Kdyby\Persistence\Query
 
         if ($this->lastQuery && $this->lastQuery instanceof NativeQueryWrapper) {
             $class = get_called_class();
-            throw new Exception\NotSupportedException("You must implement your own count query in $class::doCreateCountQuery(), Paginator from Doctrine doesn't support NativeQueries.");
+            throw new NotSupportedException("You must implement your own count query in $class::doCreateCountQuery(), Paginator from Doctrine doesn't support NativeQueries.");
         }
 
         if ($paginatedQuery !== NULL) {
@@ -229,7 +229,7 @@ abstract class QueryObject implements Kdyby\Persistence\Query
         }
 
         if (!$query instanceof Doctrine\ORM\AbstractQuery) {
-            throw new Exception\UnexpectedValueException(
+            throw new UnexpectedValueException(
                 "Method " . get_called_class() . "::doCreateQuery must return " .
                 "instanceof Doctrine\\ORM\\Query or Kdyby\\Doctrine\\QueryBuilder, " .
                 (is_object($query) ? 'instance of ' . get_class($query) : gettype($query)) . " given."

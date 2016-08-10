@@ -17,7 +17,7 @@ use Doctrine\ORM\NonUniqueResultException;
 use Kdyby;
 use Kdyby\Persistence;
 use Nette\Utils\ObjectMixin;
-use Kdyby\Exception;
+use Kdyby\Doctrine\Exception;
 
 
 
@@ -280,7 +280,7 @@ class EntityRepository extends Doctrine\ORM\EntityRepository implements Persiste
             return NULL;
 
         } catch (NonUniqueResultException $e) { // this should never happen!
-            throw new Exception\InvalidStateException("You have to setup your query calling ->setMaxResult(1).", 0, $e);
+            throw new InvalidStateException("You have to setup your query calling ->setMaxResult(1).", 0, $e);
 
         } catch (\Exception $e) {
             throw $this->handleQueryException($e, $queryObject);
@@ -310,7 +310,7 @@ class EntityRepository extends Doctrine\ORM\EntityRepository implements Persiste
     {
         $lastQuery = $queryObject instanceof QueryObject ? $queryObject->getLastQuery() : NULL;
 
-        return new Exception\QueryException($e, $lastQuery, '[' . get_class($queryObject) . '] ' . $e->getMessage());
+        return new QueryException($e, $lastQuery, '[' . get_class($queryObject) . '] ' . $e->getMessage());
     }
 
 
