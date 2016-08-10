@@ -4,7 +4,7 @@ Kdyby/Doctrine QueryObject for Symfony
 Introduction
 ------------
 
-[Kdyby/Doctrine](https://github.com/Kdyby/Doctrine) is nice extension to provide integration of Doctrine 2 ORM into Nette Framework. This extension is the lite version Kdyby/Doctrine extension for Symfony Framework and contains the most essential classes for working with [Kdyby\Doctrine QueryObjects](https://github.com/kdyby/doctrine/blob/master/docs/en/resultset.md) in Symfony.
+[Kdyby/Doctrine](https://github.com/Kdyby/Doctrine) is nice extension to provide integration of Doctrine 2 ORM into Nette Framework. This extension is a lite version of Kdyby/Doctrine extension for Symfony Framework and contains the most essential classes for working with [Kdyby\Doctrine QueryObjects](https://github.com/kdyby/doctrine/blob/master/docs/en/resultset.md) in Symfony.
 
 Requirements
 ------------
@@ -16,7 +16,7 @@ Kdyby/Doctrine QueryObject requires PHP 5.4.
 Installation
 ------------
 
-The best way to install Kdyby/Doctrine QueryObject is using  [Composer](http://getcomposer.org/):
+The best way how to install Kdyby/Doctrine QueryObject is using  [Composer](http://getcomposer.org/):
 
 Add to your composer.json above require section:
 
@@ -212,7 +212,7 @@ $users = $repo->fetch($userQuery)
               ->applyPaginator($paginator, 2);
 ```
 
-Introduction
+Conclusions
 ------------
 
-This is experimental version without test and users' experience. Use at your own risk :)
+This is an experimental version without test and users' experience. Use at your own risk :)
